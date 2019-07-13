@@ -1,5 +1,7 @@
 package br.com.test.jms;
 
+import java.util.Scanner;
+
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSException;
@@ -36,7 +38,6 @@ public class TesteConsumidorTopic {
 
 			@Override
 			public void onMessage(Message message) {
-			
 				TextMessage text = (TextMessage) message;
 				
 				try {
@@ -47,6 +48,8 @@ public class TesteConsumidorTopic {
 			}
 			
 		});
+		
+		new Scanner(System.in).nextLine();
 		
 		session.close();
 		connection.close();
