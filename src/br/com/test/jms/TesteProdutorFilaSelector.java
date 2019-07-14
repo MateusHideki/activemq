@@ -14,7 +14,7 @@ import javax.xml.bind.JAXB;
 import br.com.test.jms.model.Pedido;
 import br.com.test.jms.model.PedidoFactory;
 
-public class TesteProdutorTopic {
+public class TesteProdutorFilaSelector {
 
 	public static void main(String[] args) throws Exception {
 

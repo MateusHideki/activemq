@@ -15,7 +15,7 @@ import javax.naming.InitialContext;
 
 import br.com.test.jms.model.Pedido;
 //topico é utilizado para enviar a mesma mesagem para varios consumidores diferentes(broadcast)
-public class TesteConsumidorTopicSelector {
+public class TesteConsumidorTopicoSelector {
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -30,7 +30,7 @@ public class TesteConsumidorTopicSelector {
 		Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 		
 		//é o local concreto no qual a mensagem ira ser salva temporariamente. No caso uma topico teste.
-		Topic topic = (Topic) context.lookup("teste");
+		Topic topic = (Topic) context.lookup("test");
 		
 		//Assinaturas duráveis só existem para tópicos. Uma assinatura durável é nada mais do que um consumidor de um tópico que se identificou. Ou seja, o tópico sabe da existência desse consumidor.
 		//O tópico, por padrão, não garante a entrega da mensagem, pois não sabe se existe 1 ou 20 consumidores. Então de cara, o tópico só entrega as mensagens para consumidores que estiverem online.
